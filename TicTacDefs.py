@@ -23,10 +23,18 @@ def checkend(Mat):
             return 1
         elif [Mat[j][i] for j in range(len(Mat))] == ['X']*len(Mat):
             return 1
-        elif Mat[i] == ['Y']*len(Mat):
-            return 2
-        elif [Mat[j][i] for j in range(len(Mat))] == ['Y']*len(Mat):
-            return 2
+        elif [Mat[j][j] for j in range(len(Mat))] == ['X']*len(Mat):
+            return 1
+        elif [Mat[i][-i-1] for i in range(len(Mat))] == ['X']*len(Mat):
+            return 1
+        if Mat[i] == ['X']*len(Mat):
+            return 1
+        elif [Mat[j][i] for j in range(len(Mat))] == ['X']*len(Mat):
+            return 1
+        elif [Mat[j][j] for j in range(len(Mat))] == ['X']*len(Mat):
+            return 1
+        elif [Mat[i][-i-1] for i in range(len(Mat))] == ['X']*len(Mat):
+            return 1
         else:
             return 0
 
